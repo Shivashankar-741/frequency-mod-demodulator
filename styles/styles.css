@@ -159,3 +159,11 @@ body {
   width: 1200px;
    height: 1000px;
 } */
+
+.btn-tutorial {
+	margin-left: 20px;
+}
+
+.btn-disable {
+	pointer-events: none;
+}

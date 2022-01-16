@@ -126,3 +126,10 @@ selectors.parameterExtraction.onmousedown = () => {
 selectors.parameterExtraction.onmouseup = () => {
 	parameterExtractionMouseUp();
 };
+
+// console.log(
+// 	(document.querySelector(".btn-tutorial").className =
+// 		document.querySelector(".btn-tutorial").className + " btn-disable")
+// );
+
+// console.log(document.querySelector(".btn-tutorial"));

@@ -95,6 +95,9 @@ class Singleton {
 			this.updatedModulatingSignal = false;
 			this.updateCarrierSignal = false;
 
+			// TUTORIAL BUTTON ACTIVE
+			this.isTutorialActive = false;
+
 			Singleton.instance = this;
 		}
 		return Singleton.instance;

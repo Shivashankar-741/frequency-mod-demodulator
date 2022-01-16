@@ -24,6 +24,8 @@ selectors.parameterExtractionBlockLeft.onclick = function (e) {
 	dcLimiter_WireBwdcLimiterToEnvelopeDetector = false;
 	if (singleton.dcLimiter_isWireConnected) {
 		singleton.dcLimiter_isWireConnected = true;
+		alert("Tutorial button has activated!");
+		document.querySelector(".btn-tutorial").className = "btn btn-secondary ml-2 btn-tutorial";
 	}
 };
 
