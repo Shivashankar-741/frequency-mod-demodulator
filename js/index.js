@@ -1,5 +1,5 @@
 import * as selectors from "./domSelector/domSelector.js";
-import { obj } from "./state/state.js";
+import { obj, tutorialData } from "./state/state.js";
 import { modulatingSubmitMouseDown } from "./events/mousedown/modulatingSubmit.mousedown.js";
 import { modulatingSubmitMouseUp } from "./events/mouseup/modulatingSubmit.mouseup.js";
 import { carrierSubmitMouseDown } from "./events/mousedown/carrierSubmit.mousedown.js";
@@ -24,6 +24,22 @@ selectors.modSig_close.onclick = function () {
 	selectors.modulatingAmplitute.value = obj.modulating.amplitude;
 	selectors.modulatingFrequency.value = obj.modulating.frequency;
 };
+
+const tutBtn = document.querySelector("#modulatingSubmit_tutorial");
+
+tutBtn.addEventListener("click", () => {
+	console.log("btn has triggered");
+	let value = $("input[name='options']:checked").val();
+	let tutorialDatas = tutorialData[value];
+	let randomNum = Math.floor(Math.random() * tutorialDatas.length);
+	let randomData = tutorialDatas[randomNum];
+	console.log(randomData);
+	obj["modulating"]["frequency"] = randomData["FM"];
+	obj["modulating"]["amplitude"] = randomData["AM"];
+	obj["carrier"]["frequency"] = randomData["FC"];
+	obj["carrier"]["amplitude"] = randomData["AC"];
+	obj["frequencySensistivity"] = randomData["KF"];
+});
 
 //clear signal
 

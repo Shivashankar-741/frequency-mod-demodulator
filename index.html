@@ -337,31 +337,27 @@
       <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 id="exampleModalLabel">
-                Resultant verification
-              </h6>
-            </div>
+          <div class="modal-content">           
             <div class="modal-body">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  NBFM
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                <label class="form-check-label" for="flexRadioDefault2">
-                  WBFM
-                </label>
-              </div>
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" id="search-type">
+                <div>
+                  <label for="Search"> Choose any one</label>
+                </div>
+                <div>
+                  <label class="btn btn-secondary active">
+                    <input type="radio" name="options" id="option1" autocomplete="off" value="NBFM" checked> NBFM
+                  </label>
+                  <label class="btn btn-secondary">
+                    <input type="radio" name="options" id="option2" autocomplete="off" value="WBFM"> WBFM
+                  </label>
+                </div>
+            </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" id='modulatingSignal_close' data-bs-dismiss="modal">
                 Close
               </button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit_tutorial">
                 Create
               </button>
             </div>
@@ -375,6 +371,7 @@
       <h2 class="footer_fs">We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</h2>
     </footer>
 
+  
     <!-- PRIMARY FILES -->
     <script type="module" src="./js/index.js"></script>
     <script type="module" src="./js/graphs/downloadGraph.js"></script>
@@ -423,7 +420,7 @@
     <script type="module" src="./js/blocksQuery/filterBlocks.js"></script>
     <script type="module" src="./js/blocksQuery/showBlocks.js"></script>
 
-    <!-- singleton -->s
+    <!-- singleton -->
     <script type="module" src="./js/singleton/singleton.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
