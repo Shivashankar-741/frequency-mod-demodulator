@@ -26,14 +26,10 @@ export const multiplierMouseUp = () => {
 		multiplier.style.left = event.pageX - multiplier.offsetWidth / 2 + "px";
 		multiplier.style.top = event.pageY - multiplier.offsetHeight / 2 + "px";
 
-		selectors.multiplierBlockLeft.style.left =
-			event.pageX - 53 - selectors.multiplierBlockLeft.offsetWidth / 2 + "px";
-		selectors.multiplierBlockLeft.style.top =
-			event.pageY + 1 - selectors.multiplierBlockLeft.offsetHeight / 2 + "px";
-		selectors.multiplierBlockTop.style.left =
-			event.pageX + 0 - selectors.multiplierBlockTop.offsetWidth / 2 + "px";
-		selectors.multiplierBlockTop.style.top =
-			event.pageY - 38 - selectors.multiplierBlockTop.offsetHeight / 2 + "px";
+		selectors.multiplierBlockLeft.style.left = event.pageX - 53 - selectors.multiplierBlockLeft.offsetWidth / 2 + "px";
+		selectors.multiplierBlockLeft.style.top = event.pageY + 1 - selectors.multiplierBlockLeft.offsetHeight / 2 + "px";
+		selectors.multiplierBlockTop.style.left = event.pageX + 0 - selectors.multiplierBlockTop.offsetWidth / 2 + "px";
+		selectors.multiplierBlockTop.style.top = event.pageY - 38 - selectors.multiplierBlockTop.offsetHeight / 2 + "px";
 		selectors.multiplierBlockBottom.style.left =
 			event.pageX + 0 - selectors.multiplierBlockBottom.offsetWidth / 2 + "px";
 		selectors.multiplierBlockBottom.style.top =
@@ -53,9 +49,7 @@ export const multiplierMouseUp = () => {
 		showAllBlocks();
 
 		if (selectors.model.value === "Delete") {
-			document
-				.getElementsByClassName("simulation-area")[0]
-				.removeChild(document.querySelector(".multiplier--block"));
+			document.getElementsByClassName("simulation-area")[0].removeChild(document.querySelector(".multiplier--block"));
 			selectors.multiplierBlockLeft.style.display = "none";
 			selectors.multiplierBlockTop.style.display = "none";
 			selectors.multiplierBlockBottom.style.display = "none";
@@ -101,8 +95,8 @@ export const multiplierMouseUp = () => {
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".result").innerHTML = `
-        		<h1 class='fontStyle'>frequency : ${obj.modulating.frequency} Hz</h1>
-       		    <h1 class='fontStyle'>amplitude : ${
+        		<h1 class='fontStyle'>Frequency : ${obj.modulating.frequency} Hz</h1>
+       		    <h1 class='fontStyle'>Amplitude : ${
 								obj.frequencySensistivity * (obj.modulating.amplitude / obj.modulating.frequency)
 							} V</h1>
       `;

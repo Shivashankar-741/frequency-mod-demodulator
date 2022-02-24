@@ -58,11 +58,9 @@ export const frequencySensistivitySubmitMouseUp = () => {
 			} else if (selectors.model.value === "output") {
 				$("#freqSenOutput").modal("show");
 				document.querySelector(".freqSenResult").innerHTML = `
-            <h2 class='fontStyle'>frequency sensistivity : ${(
-							2 *
-							3.14 *
-							obj.frequencySensistivity
-						).toFixed(2)} Hz/v</h4>
+            <h2 class='fontStyle'>Frequency Sensistivity : ${(2 * 3.14 * obj.frequencySensistivity).toFixed(
+							2
+						)} Hz/v</h4>
           `;
 				selectors.model.value = "mode";
 			}

@@ -21,10 +21,8 @@ export const integratorMouseUp = () => {
 	function onMouseMove(event) {
 		integrator.style.left = event.pageX - integrator.offsetWidth / 2 + "px";
 		integrator.style.top = event.pageY - integrator.offsetHeight / 2 + "px";
-		selectors.integratorBlockLeft.style.left =
-			event.pageX - 53 - selectors.integratorBlockLeft.offsetWidth / 2 + "px";
-		selectors.integratorBlockLeft.style.top =
-			event.pageY + 1 - selectors.integratorBlockLeft.offsetHeight / 2 + "px";
+		selectors.integratorBlockLeft.style.left = event.pageX - 53 - selectors.integratorBlockLeft.offsetWidth / 2 + "px";
+		selectors.integratorBlockLeft.style.top = event.pageY + 1 - selectors.integratorBlockLeft.offsetHeight / 2 + "px";
 		selectors.integratorBlockBottom.style.left =
 			event.pageX + 0 - selectors.integratorBlockBottom.offsetWidth / 2 + "px";
 		selectors.integratorBlockBottom.style.top =
@@ -43,9 +41,7 @@ export const integratorMouseUp = () => {
 		showAllBlocks();
 
 		if (selectors.model.value === "Delete") {
-			document
-				.getElementsByClassName("simulation-area")[0]
-				.removeChild(document.querySelector(".integrator--block"));
+			document.getElementsByClassName("simulation-area")[0].removeChild(document.querySelector(".integrator--block"));
 			selectors.integratorBlockLeft.style.display = "none";
 			selectors.integratorBlockBottom.style.display = "none";
 			singleton.isIntegratorPlaced = false;
@@ -80,10 +76,8 @@ export const integratorMouseUp = () => {
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".result").innerHTML = `
-        <h1 class='fontStyle'>frequency : ${obj.modulating.amplitude} Hz</h1>
-        <h1 class='fontStyle'>amplitude : ${
-					obj.modulating.amplitude / (2 * Math.PI * obj.modulating.frequency)
-				} v</h1>
+        <h1 class='fontStyle'>Frequency : ${obj.modulating.amplitude} Hz</h1>
+        <h1 class='fontStyle'>Amplitude : ${obj.modulating.amplitude / (2 * Math.PI * obj.modulating.frequency)} v</h1>
       `;
 				selectors.model.value = "mode";
 			} else {

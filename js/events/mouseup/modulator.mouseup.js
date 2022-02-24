@@ -26,19 +26,13 @@ export const modulatorMouseUp = () => {
 		modulator.style.left = event.pageX - modulator.offsetWidth / 2 + "px";
 		modulator.style.top = event.pageY - modulator.offsetHeight / 2 + "px";
 
-		selectors.modulatorBlockTop.style.left =
-			event.pageX + 0 - selectors.modulatorBlockTop.offsetWidth / 2 + "px";
-		selectors.modulatorBlockTop.style.top =
-			event.pageY - 38 - selectors.modulatorBlockTop.offsetHeight / 2 + "px";
+		selectors.modulatorBlockTop.style.left = event.pageX + 0 - selectors.modulatorBlockTop.offsetWidth / 2 + "px";
+		selectors.modulatorBlockTop.style.top = event.pageY - 38 - selectors.modulatorBlockTop.offsetHeight / 2 + "px";
 
-		selectors.modulatorBlockLeft.style.left =
-			event.pageX - 53 - selectors.modulatorBlockLeft.offsetWidth / 2 + "px";
-		selectors.modulatorBlockLeft.style.top =
-			event.pageY + 1 - selectors.modulatorBlockLeft.offsetHeight / 2 + "px";
-		selectors.modulatorBlockRight.style.left =
-			event.pageX + 53 - selectors.modulatorBlockRight.offsetWidth / 2 + "px";
-		selectors.modulatorBlockRight.style.top =
-			event.pageY + 1 - selectors.modulatorBlockRight.offsetHeight / 2 + "px";
+		selectors.modulatorBlockLeft.style.left = event.pageX - 53 - selectors.modulatorBlockLeft.offsetWidth / 2 + "px";
+		selectors.modulatorBlockLeft.style.top = event.pageY + 1 - selectors.modulatorBlockLeft.offsetHeight / 2 + "px";
+		selectors.modulatorBlockRight.style.left = event.pageX + 53 - selectors.modulatorBlockRight.offsetWidth / 2 + "px";
+		selectors.modulatorBlockRight.style.top = event.pageY + 1 - selectors.modulatorBlockRight.offsetHeight / 2 + "px";
 	}
 
 	document.addEventListener("mousemove", onMouseMove);
@@ -54,9 +48,7 @@ export const modulatorMouseUp = () => {
 		showAllBlocks();
 
 		if (selectors.model.value === "Delete") {
-			document
-				.getElementsByClassName("simulation-area")[0]
-				.removeChild(document.querySelector(".modulator--block"));
+			document.getElementsByClassName("simulation-area")[0].removeChild(document.querySelector(".modulator--block"));
 			selectors.modulatorBlockLeft.style.display = "none";
 			selectors.modulatorBlockRight.style.display = "none";
 			selectors.modulatorBlockTop.style.display = "none";
@@ -104,7 +96,7 @@ export const modulatorMouseUp = () => {
 				$("#output").modal("show");
 				selectors.model.value = "mode";
 				document.querySelector(".result").innerHTML = `
-        <h1 class='fontStyle'>amplitute : ${obj.carrier.amplitude} V</h1>
+        <h1 class='fontStyle'>Amplitute : ${obj.carrier.amplitude} V</h1>
       `;
 			} else {
 				alert("Please connect the wires");

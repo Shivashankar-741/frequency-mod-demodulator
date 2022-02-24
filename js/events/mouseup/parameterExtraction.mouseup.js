@@ -65,8 +65,7 @@ export const parameterExtractionMouseUp = () => {
 					document.getElementById("calculator").removeChild(document.querySelector(".dcg-wrapper"));
 				}
 				$("#paraExtOutput").modal("show");
-				let beta =
-					(obj.frequencySensistivity * obj.modulating.amplitude) / obj.modulating.frequency;
+				let beta = (obj.frequencySensistivity * obj.modulating.amplitude) / obj.modulating.frequency;
 				console.log(beta);
 				let power = (obj.carrier.amplitude * obj.carrier.amplitude) / 2;
 				let freqDeviation = obj.frequencySensistivity * obj.modulating.amplitude;
@@ -75,7 +74,7 @@ export const parameterExtractionMouseUp = () => {
 					let bandWidth = 2 * (beta + 1) * obj.modulating.frequency;
 					document.querySelector(".paramExtractResult").innerHTML = `
           <h1 class='fontStyle'>Frequency deviation : ${freqDeviation} Hz</h1>
-          <h1 class='fontStyle'>	β : ${betaValue}(no unit)</h1>
+          <h1 class='fontStyle'>	Modulation Index : ${betaValue}(no unit)</h1>
           <h1 class='fontStyle'>Signal Type: Wide band frequency modulation</h1>
           <h1 class='fontStyle'>BandWidth: ${bandWidth} Hz</h1>
           <h1 class='fontStyle'>Power:${power} W</h1>
@@ -84,7 +83,7 @@ export const parameterExtractionMouseUp = () => {
 					let bandWidth = 2 * obj.modulating.frequency;
 					document.querySelector(".paramExtractResult").innerHTML = `
           <h1 class='fontStyle'>Frequency deviation : ${freqDeviation} Hz</h1>
-          <h1 class='fontStyle'>	β : ${betaValue}(no unit)</h1>
+          <h1 class='fontStyle'>	Modulation Index : ${betaValue}(no unit)</h1>
           <h1 class='fontStyle'>Signal Type: Narrow band frequency modulation</h1>
           <h1 class='fontStyle'>BandWidth: ${bandWidth} Hz</h1>
           <h1 class='fontStyle'>Power:${power} W</h1>

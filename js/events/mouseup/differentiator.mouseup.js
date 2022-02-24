@@ -82,22 +82,22 @@ export const differentiatorMouseUp = () => {
 				}
 				let elt = document.getElementById("calculator");
 				let calculator = Desmos.GraphingCalculator(elt);
-				let eqn = `${obj.carrier.amplitude}* 2 * \\pi * ${obj.carrier.frequency}(1+(${
-					obj.frequencySensistivity
-				}/${obj.carrier.frequency})*${obj.modulating.amplitude}* \\cos( 2 * \\pi * ${
+				let eqn = `${obj.carrier.amplitude}* 2 * \\pi * ${obj.carrier.frequency}(1+(${obj.frequencySensistivity}/${
+					obj.carrier.frequency
+				})*${obj.modulating.amplitude}* \\cos( 2 * \\pi * ${obj.modulating.frequency} * x))*\\sin(2 * \\pi * ${
+					obj.carrier.frequency
+				} * x+((${obj.frequencySensistivity * obj.modulating.amplitude})/${
 					obj.modulating.frequency
-				} * x))*\\sin(2 * \\pi * ${obj.carrier.frequency} * x+((${
-					obj.frequencySensistivity * obj.modulating.amplitude
-				})/${obj.modulating.frequency})* \\sin( 2 * \\pi * ${obj.modulating.frequency} * x)-180)`;
+				})* \\sin( 2 * \\pi * ${obj.modulating.frequency} * x)-180)`;
 				let s = "y(x) = " + `${eqn}`;
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".result").innerHTML = `
-        <h1 class='fontStyle'>modulating frequency : ${obj.modulating.frequency}</h1>
-        <h1 class='fontStyle'>modulating amplitute : ${obj.modulating.amplitude}</h1>
-        <h1 class='fontStyle'>carrier frequency : ${obj.carrier.frequency}</h1>
-        <h1 class='fontStyle'>carrier amplitute : ${obj.carrier.amplitude}</h1>
-        <h1 class='fontStyle'>frequency sensistivity: ${obj.frequencySensistivity}</h1>
+        <h1 class='fontStyle'>Modulating Frequency : ${obj.modulating.frequency} Hz</h1>
+        <h1 class='fontStyle'>Modulating Amplitute : ${obj.modulating.amplitude} V</h1>
+        <h1 class='fontStyle'>Carrier Frequency : ${obj.carrier.frequency} Hz</h1>
+        <h1 class='fontStyle'>Carrier Amplitute : ${obj.carrier.amplitude} V</h1>
+        <h1 class='fontStyle'>Frequency Sensistivity: ${obj.frequencySensistivity} Hz/v</h1>
       `;
 				selectors.model.value = "mode";
 			} else {
@@ -208,9 +208,7 @@ selectors.envelopeDetector.onmouseup = () => {
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".result").innerHTML = `
-        <h1 class='fontStyle'>amplitute : ${
-					obj.carrier.amplitude * 2 * Math.PI * obj.frequencySensistivity
-				}</h1>
+        <h1 class='fontStyle'>Amplitute : ${obj.carrier.amplitude * 2 * Math.PI * obj.frequencySensistivity} V</h1>
       `;
 			} else {
 				alert("please connect the wires");

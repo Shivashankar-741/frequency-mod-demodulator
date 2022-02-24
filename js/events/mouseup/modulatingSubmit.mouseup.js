@@ -65,16 +65,14 @@ export const modulatingSubmitMouseUp = () => {
 				// Output graph
 				let elt = document.getElementById("calculator");
 				let calculator = Desmos.GraphingCalculator(elt);
-				let s =
-					"y(x) = " +
-					`(${obj.modulating.amplitude} * \\cos( 2 * \\pi * ${obj.modulating.frequency} * x))`;
+				let s = "y(x) = " + `(${obj.modulating.amplitude} * \\cos( 2 * \\pi * ${obj.modulating.frequency} * x))`;
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".dcg-expressionlist").style.display = "none";
 
 				document.querySelector(".result").innerHTML = `
-          <h1 class='fontStyle'>frequency  : ${obj.modulating.frequency} Hz</h1>
-          <h1 class='fontStyle'>amplitute  : ${obj.modulating.amplitude} V</h1>
+          <h1 class='fontStyle'>Frequency  : ${obj.modulating.frequency} Hz</h1>
+          <h1 class='fontStyle'>Amplitute  : ${obj.modulating.amplitude} V</h1>
         `;
 				selectors.model.value = "mode";
 			}

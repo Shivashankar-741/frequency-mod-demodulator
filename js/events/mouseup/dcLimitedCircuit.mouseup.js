@@ -92,8 +92,8 @@ export const dcLimitedCircuitMouseUp = () => {
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				document.querySelector(".result").innerHTML = `
-        <h1 class='fontStyle'>frequency : ${obj.modulating.frequency} Hz</h1>
-        <h1 class='fontStyle'>amplitude : ${obj.modulating.amplitude} V</h1>
+        <h1 class='fontStyle'>Frequency : ${obj.modulating.frequency} Hz</h1>
+        <h1 class='fontStyle'>Amplitude : ${obj.modulating.amplitude} V</h1>
       `;
 			} else {
 				alert("Please connect the wires");

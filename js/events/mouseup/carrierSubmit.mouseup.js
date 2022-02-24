@@ -19,10 +19,8 @@ export const carrierSubmitMouseUp = () => {
 			carrierSignal.style.left = event.pageX - carrierSignal.offsetWidth / 2 + "px";
 			carrierSignal.style.top = event.pageY - carrierSignal.offsetHeight / 2 + "px";
 
-			selectors.carrierSignalRight.style.left =
-				event.pageX + 53 - selectors.carrierSignalRight.offsetWidth / 2 + "px";
-			selectors.carrierSignalRight.style.top =
-				event.pageY + 1 - selectors.carrierSignalRight.offsetHeight / 2 + "px";
+			selectors.carrierSignalRight.style.left = event.pageX + 53 - selectors.carrierSignalRight.offsetWidth / 2 + "px";
+			selectors.carrierSignalRight.style.top = event.pageY + 1 - selectors.carrierSignalRight.offsetHeight / 2 + "px";
 		}
 
 		document.addEventListener("mousemove", onMouseMove);
@@ -63,15 +61,13 @@ export const carrierSubmitMouseUp = () => {
 				}
 				let elt = document.getElementById("calculator");
 				let calculator = Desmos.GraphingCalculator(elt);
-				let s =
-					"y(x) = " +
-					`(${obj.carrier.amplitude} * \\cos( 2 * \\pi * ${obj.carrier.frequency} * x))`;
+				let s = "y(x) = " + `(${obj.carrier.amplitude} * \\cos( 2 * \\pi * ${obj.carrier.frequency} * x))`;
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
 				selectors.model.value = "mode";
 				document.querySelector(".result").innerHTML = `
-            <h1 class='fontStyle'>frequency : ${obj.carrier.frequency}Hz</h1>
-            <h1 class='fontStyle'>amplitute : ${obj.carrier.amplitude}V</h1>
+            <h1 class='fontStyle'>Frequency : ${obj.carrier.frequency}Hz</h1>
+            <h1 class='fontStyle'>Amplitute : ${obj.carrier.amplitude}V</h1>
           `;
 			}
 			singleton.carrierSig_isCarrierSignalMoving = false;
