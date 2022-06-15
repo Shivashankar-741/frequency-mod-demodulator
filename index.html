@@ -2,250 +2,233 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FM modulation and demodulation</title>
-  <link rel="stylesheet" href="./styles/styles.css">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FM modulation and demodulation</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class='layout'>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="custom-nav container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class='layout'>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="custom-nav container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        <!--  -->
-          <div class="collapse navbar-collapse custom_nav" id="navbarSupportedContent">
-          <div>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <select class="form-select" aria-label="Default select example" id="selectMode">
+                <!--  -->
+                <div class="collapse navbar-collapse custom_nav" id="navbarSupportedContent">
+                    <div>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <select class="form-select" aria-label="Default select example" id="selectMode">
               <option selected>mode</option>
               <option value="output">output</option>
               <option value="Delete">Delete</option>
               <option value="Edit">Edit</option>
             </select>
-            <button type="button" class="btn btn-secondary ml-2 btn-tutorial btn-disable"
-            data-bs-toggle="modal"
-            data-bs-target="#tutorialModal" data-bs-whatever="Modulating signal"
-            >
+                            <button type="button" class="btn btn-secondary ml-2 btn-tutorial btn-disable" data-bs-toggle="modal" data-bs-target="#tutorialModal" data-bs-whatever="Modulating signal">
               Tutorial
             </button>
-          </ul>
-        </div>
-        <div>
-          <h1 class="navbar-brand custom_fs">Frequency Modulation and Demodulation Simulator<h1/>
-        </div>
-          <div class="d-flex">
-            <button class="btn btn-outline-success mx-xxl-2" type="submit">Search</button>
-            <input type="text" class="form-control" id="searchBlock" placeholder="Search block">
-          </div>
-        </div>
-      </div>
-    </nav>
-    <!-- Simulator container -->
-    <div class="workspace">
-      <div class="sidebar">
-        <ul class="sidebar__block">
-          <li class="sidebar__block--list" id="modulatingSignal" data-bs-toggle="modal"
-            data-bs-target="#modulatingSignalModal" data-bs-whatever="Modulating signal">
-            <img src="./blockImages/modulatingSignal.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="carrierSignal" data-bs-toggle="modal"
-            data-bs-target="#carrierSignalModal" data-bs-whatever="Carrier signal">
-            <img src="./blockImages/carrierSignal.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="frequencySensistivity" data-bs-toggle="modal"
-            data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-            <img src="./blockImages/frequencySensistivity.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="integrator">
-            <img src="./blockImages/integrator.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="multiplier">
-            <img src="./blockImages/multiplier.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="modulator">
-            <img src="./blockImages/modulator.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="differentiator">
-            <img src="./blockImages/differentiator.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="envelopeDetector">
-            <img src="./blockImages/envelopeDetector.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="dcLimitedCircuit">
-            <img src="./blockImages/d.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-          <li class="sidebar__block--list" id="parameterExtraction">
-            <img src="./blockImages/parameterExtraction.png" class="sidebar__block--img" alt="" srcset="">
-          </li>
-        </ul>
-      </div>
-
-      <div class="connectionWireBwModsigToIntegrator">
-        <div class="connectionWireBwFreqSenToMultiplier">
-          <div class="connectionWireBwCarsigToModulator">
-            <div class="connectionWireBwIntegratorToMultiplier">
-              <div class="connectionWireBwMultiplierToModulator">
-                <div class="connectionWireBwModulatorToDifferentiator">
-                  <div class="connectionWireBwDifferentiatorTodcLimiter">
-                    <div class="connectionWireBwdcLimiterToEnvelopeDetector">
-                      <div class="check">
-                        <div class="connectionWireBwenvelopeDetToParamExtract">
-                          <div class="check2">
-                            <div class="simulation-area">
-                              <canvas class='canvas' id="canvasWireBwModsigToIntegrator" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwModsigToMultiplier" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwCarsigToModulator" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwIntegratorToMultiplier" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwMultiplierToModulator" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwModulatorToDifferentiator" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwDifferentiatorTodcLimiter" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwdcLimiterToEnvelopeDetector" width="1695"
-                                height="1080px"></canvas>
-                              <canvas class='canvas' id="canvasWireBwenvelopeDetToParamExtract" width="1695"
-                                height="1080px"></canvas>
-                              <div class="modulatingSignal--block__right circle"></div>
-
-                              <div class="carrierSignal--block__right circle"></div>
-                              <div class="frequencySensistivity--block__right circle"></div>
-                              <div class="integrator--block__left circle"></div>
-                              <div class="integrator--block__bottom circle"></div>
-                              <div class="multiplier--block__top circle"></div>
-                              <div class="multiplier--block__left circle"></div>
-                              <div class="multiplier--block__bottom circle"></div>
-                              <div class="modulator--block__top circle"></div>
-                              <div class="modulator--block__left circle"></div>
-                              <div class="modulator--block__right circle"></div>
-                              <div class="differentiator--block__left circle"></div>
-                              <div class="differentiator--block__right circle"></div>
-                              <div class="dcLimitedCircuit--block__left circle"></div>
-                              <div class="dcLimitedCircuit--block__right circle"></div>
-                              <div class="envelopeDetector--block__left circle"></div>
-                              <div class="envelopeDetector--block__right circle"></div>
-                              <div class="parameterExtraction--block__left circle"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            <button type="button" class="btn btn-secondary btn-reset" onclick="window.location.reload();">            
+              Reset
+            </button>
+                        </ul>
                     </div>
-                  </div>
+                    <div>
+                        <h1 class="navbar-brand custom_fs">Frequency Modulation and Demodulation Simulator
+                            <h1/>
+                    </div>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-success mx-xxl-2" type="submit">Search</button>
+                        <input type="text" class="form-control" id="searchBlock" placeholder="Search block">
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </nav>
+        <!-- Simulator container -->
+        <div class="workspace">
+            <div class="sidebar">
+                <ul class="sidebar__block">
+                    <li class="sidebar__block--list" id="modulatingSignal" data-bs-toggle="modal" data-bs-target="#modulatingSignalModal" data-bs-whatever="Modulating signal">
+                        <img src="./blockImages/modulatingSignal.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="carrierSignal" data-bs-toggle="modal" data-bs-target="#carrierSignalModal" data-bs-whatever="Carrier signal">
+                        <img src="./blockImages/carrierSignal.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="frequencySensistivity" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
+                        <img src="./blockImages/frequencySensistivity.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="integrator">
+                        <img src="./blockImages/integrator.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="multiplier">
+                        <img src="./blockImages/multiplier.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="modulator">
+                        <img src="./blockImages/modulator.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="differentiator">
+                        <img src="./blockImages/differentiator.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="envelopeDetector">
+                        <img src="./blockImages/envelopeDetector.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="dcLimitedCircuit">
+                        <img src="./blockImages/d.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                    <li class="sidebar__block--list" id="parameterExtraction">
+                        <img src="./blockImages/parameterExtraction.png" class="sidebar__block--img" alt="" srcset="">
+                    </li>
+                </ul>
+            </div>
 
-      <!-- Modal Popup -->
+            <div class="connectionWireBwModsigToIntegrator">
+                <div class="connectionWireBwFreqSenToMultiplier">
+                    <div class="connectionWireBwCarsigToModulator">
+                        <div class="connectionWireBwIntegratorToMultiplier">
+                            <div class="connectionWireBwMultiplierToModulator">
+                                <div class="connectionWireBwModulatorToDifferentiator">
+                                    <div class="connectionWireBwDifferentiatorTodcLimiter">
+                                        <div class="connectionWireBwdcLimiterToEnvelopeDetector">
+                                            <div class="check">
+                                                <div class="connectionWireBwenvelopeDetToParamExtract">
+                                                    <div class="check2">
+                                                        <div class="simulation-area">
+                                                            <canvas class='canvas' id="canvasWireBwModsigToIntegrator" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwModsigToMultiplier" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwCarsigToModulator" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwIntegratorToMultiplier" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwMultiplierToModulator" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwModulatorToDifferentiator" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwDifferentiatorTodcLimiter" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwdcLimiterToEnvelopeDetector" width="1695" height="1080px"></canvas>
+                                                            <canvas class='canvas' id="canvasWireBwenvelopeDetToParamExtract" width="1695" height="1080px"></canvas>
+                                                            <div class="modulatingSignal--block__right circle"></div>
 
-      <!-- Modal for modulatingSignal -->
-      <div class="modal fade" id="modulatingSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 id="exampleModalLabel">
-                frequency and amplitude of modulating signal
-              </h6>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Frequency:</label>
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="modulatingFrequency" value="500">
-                    <span class="input-group-text" id="basic-addon1">Hz</span>
-                  </div>
+                                                            <div class="carrierSignal--block__right circle"></div>
+                                                            <div class="frequencySensistivity--block__right circle"></div>
+                                                            <div class="integrator--block__left circle"></div>
+                                                            <div class="integrator--block__bottom circle"></div>
+                                                            <div class="multiplier--block__top circle"></div>
+                                                            <div class="multiplier--block__left circle"></div>
+                                                            <div class="multiplier--block__bottom circle"></div>
+                                                            <div class="modulator--block__top circle"></div>
+                                                            <div class="modulator--block__left circle"></div>
+                                                            <div class="modulator--block__right circle"></div>
+                                                            <div class="differentiator--block__left circle"></div>
+                                                            <div class="differentiator--block__right circle"></div>
+                                                            <div class="dcLimitedCircuit--block__left circle"></div>
+                                                            <div class="dcLimitedCircuit--block__right circle"></div>
+                                                            <div class="envelopeDetector--block__left circle"></div>
+                                                            <div class="envelopeDetector--block__right circle"></div>
+                                                            <div class="parameterExtraction--block__left circle"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Amplitute:</label>
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="modulatingAmplitute" value="10">
-                    <span class="input-group-text" id="basic-addon1">V</span>
-                  </div>
-                </div>
-              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id='modulatingSignal_close' data-bs-dismiss="modal">
+
+            <!-- Modal Popup -->
+
+            <!-- Modal for modulatingSignal -->
+            <div class="modal fade" id="modulatingSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 id="exampleModalLabel">
+                                frequency and amplitude of modulating signal
+                            </h6>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Frequency:</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="modulatingFrequency" value="500">
+                                        <span class="input-group-text" id="basic-addon1">Hz</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Amplitute:</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="modulatingAmplitute" value="10">
+                                        <span class="input-group-text" id="basic-addon1">V</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id='modulatingSignal_close' data-bs-dismiss="modal">
                 Close
               </button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit">
                 Create
               </button>
-            </div>
-          </div>
-        </div>
-    </div> 
-  
-      <!-- Model for carrierSignal -->
-      <div class="modal fade" id="carrierSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 id="exampleModalLabel">
-                frequency and amplitude of carrier signal
-              </h6>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form>
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Frequency:</label>
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="carrierFrequency" value="1000">
-                    <span class="input-group-text" id="basic-addon1">Hz</span>
-                  </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Amplitute:</label>
-                  <div class="input-group">
-                    <input type="number" class="form-control" id="carrierAmplitute" value="20">
-                    <span class="input-group-text" id="basic-addon1">V</span>
-                  </div>
-                </div>
-              </form>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="carrierSubmit">Create</button>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Model for frequency sensistivity -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 id="exampleModalLabel">
-                Choose frequency sensistivity
-              </h6>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Model for carrierSignal -->
+            <div class="modal fade" id="carrierSignalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 id="exampleModalLabel">
+                                frequency and amplitude of carrier signal
+                            </h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Frequency:</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="carrierFrequency" value="1000">
+                                        <span class="input-group-text" id="basic-addon1">Hz</span>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Amplitute:</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="carrierAmplitute" value="20">
+                                        <span class="input-group-text" id="basic-addon1">V</span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="carrierSubmit">Create</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="modal-body">
-              <select class="form-select" aria-label="Default select example" id="frequencySensitivityInput">
+
+            <!-- Model for frequency sensistivity -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 id="exampleModalLabel">
+                                Choose frequency sensistivity
+                            </h6>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <select class="form-select" aria-label="Default select example" id="frequencySensitivityInput">
                 <option value="40">40</option>
                 <option value="60">60</option>
                 <option value="80">80</option>
@@ -254,181 +237,177 @@
                 <option value="700">750</option>
                 <option value="1000">1000</option>
               </select>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-                  id="frequencySensistivitySubmit">Ok</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- output modal -->
-      <div class="modal fade" id="output" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h6 id="exampleModalLabel" class='outputTitle'>
-              </h6> 
-              <h6 id="exampleModalLabel">
-                x axis in time(ms)
-                <br>
-                y axis in amplitude(V)
-              </h6> 
-              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-            </div>
-            <div class="modal-body" id='container'>
-              <div id="calculator" style="width: 1000px; height: 450px;"></div>
-            </div>
-            <div class='btnOutput'>
-              <button type="button" class="btn btn-success" id='downloadGraph'>Download
-                graph</button>
-              <a href="#" id="ninjadown" download="output.png" /></a>
-            </div>
-            <div class="result"></div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id='removeGraph' data-bs-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="carrierSubmit">Create</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Frequency sensistivity output modal -->
-      <div class="modal fade" id="freqSenOutput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Frequency sensistivity Report</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="freqSenResult"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- parameter extraction output modal -->
-      <div class="modal fade" id="paraExtOutput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Overall report</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="paramExtractResult"></div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal for tutorial -->
-      <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">           
-            <div class="modal-body">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" id="search-type">
-                <div>
-                  <label for="Search"> Choose any one</label>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="frequencySensistivitySubmit">Ok</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                  <label class="btn btn-secondary active">
+            </div>
+
+            <!-- output modal -->
+            <div class="modal fade" id="output" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 id="exampleModalLabel" class='outputTitle'>
+                            </h6>
+                            <h6 id="exampleModalLabel">
+                                x axis in time(ms)
+                                <br> y axis in amplitude(V)
+                            </h6>
+                            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                        </div>
+                        <div class="modal-body" id='container'>
+                            <div id="calculator" style="width: 1000px; height: 450px;"></div>
+                        </div>
+                        <div class='btnOutput'>
+                            <button type="button" class="btn btn-success" id='downloadGraph'>Download
+                graph</button>
+                            <a href="#" id="ninjadown" download="output.png" /></a>
+                        </div>
+                        <div class="result"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id='removeGraph' data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="carrierSubmit">Create</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Frequency sensistivity output modal -->
+            <div class="modal fade" id="freqSenOutput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Frequency sensistivity Report</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="freqSenResult"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- parameter extraction output modal -->
+            <div class="modal fade" id="paraExtOutput" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Overall report</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="paramExtractResult"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for tutorial -->
+            <div class="modal fade" id="tutorialModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="search-type">
+                                <div>
+                                    <label for="Search"> Choose any one</label>
+                                </div>
+                                <div>
+                                    <label class="btn btn-secondary active">
                     <input type="radio" name="options" id="option1" autocomplete="off" value="NBFM" checked> NBFM
                   </label>
-                  <label class="btn btn-secondary">
+                                    <label class="btn btn-secondary">
                     <input type="radio" name="options" id="option2" autocomplete="off" value="WBFM"> WBFM
                   </label>
-                </div>
-            </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id='modulatingSignal_close' data-bs-dismiss="modal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" id='modulatingSignal_close' data-bs-dismiss="modal">
                 Close
               </button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit_tutorial">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="modulatingSubmit_tutorial">
                 Create
               </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+            <canvas id="demo"></canvas>
         </div>
-    </div> 
-      <canvas id="demo"></canvas>
+
+        <footer class="footer">
+            <h2 class="footer_fs">We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</h2>
+        </footer>
+
+
+        <!-- PRIMARY FILES -->
+        <script type="module" src="./js/index.js"></script>
+        <script type="module" src="./js/graphs/downloadGraph.js"></script>
+        <script type="module" src="./js/graphs/removeGraph.js"></script>
+        <!-- <script type="module" src="./js/blocks/filterBlocks.js"></script> -->
+
+        <!-- Wires -->
+        <script type="module" src="./js/wires/modSigToIntegrator.js"></script>
+        <script type="module" src="./js/wires/freqSenToMulti.js"></script>
+        <script type="module" src="./js/wires/carrierToMod.js"></script>
+        <script type="module" src="./js/wires/integratorToMulti.js"></script>
+        <script type="module" src="./js/wires/multiToModulator.js"></script>
+        <script type="module" src="./js/wires/dcLimiterToParameterExtraction.js"></script>
+        <script type="module" src="./js/wires/differentiatorToEnveDetector.js"></script>
+        <script type="module" src="./js/wires/envelopeDetectorToDcLimiter.js"></script>
+        <script type="module" src="./js/wires/modulatorToDifferentiator.js"></script>
+
+
+        <!-- EVENTS MOUSE DOWN -->
+        <script type="module" src="./js/events/mousedown/modulatingSubmit.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/carrierSubmit.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/integrator.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/dcLimitedCircuit.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/differentiator.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/modulator.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/multiplier.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/parameterExtraction.mousedown.js"></script>
+        <script type="module" src="./js/events/mousedown/frequencySensistivitySubmit.mousedown.js"></script>
+
+        <!-- EVENTS MOUSE UP -->
+        <script type="module" src="./js/events/mouseup/modulatingSubmit.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/carrierSubmit.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/integrator.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/dcLimitedCircuit.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/differentiator.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/modulator.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/multiplier.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/parameterExtraction.mouseup.js"></script>
+        <script type="module" src="./js/events/mouseup/frequencySensistivitySubmit.mouseup.js"></script>
+
+        <!-- SIGNAL QUERY -->
+        <script type="module" src="./js/signalsQuery/clearSignal.js"></script>
+        <script type="module" src="./js/signalsQuery/updateSignal.js"></script>
+
+        <!-- BLOCK QUERY -->
+        <script type="module" src="./js/blocksQuery/filterBlocks.js"></script>
+        <script type="module" src="./js/blocksQuery/showBlocks.js"></script>
+
+        <!-- singleton -->
+        <script type="module" src="./js/singleton/singleton.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+        </script>
     </div>
-
-    <footer class="footer">
-      <h2 class="footer_fs">We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</h2>
-    </footer>
-
-  
-    <!-- PRIMARY FILES -->
-    <script type="module" src="./js/index.js"></script>
-    <script type="module" src="./js/graphs/downloadGraph.js"></script>
-    <script type="module" src="./js/graphs/removeGraph.js"></script>
-    <!-- <script type="module" src="./js/blocks/filterBlocks.js"></script> -->
-    
-    <!-- Wires -->
-    <script type="module" src="./js/wires/modSigToIntegrator.js"></script>
-    <script type="module" src="./js/wires/freqSenToMulti.js"></script>
-    <script type="module" src="./js/wires/carrierToMod.js"></script>
-    <script type="module" src="./js/wires/integratorToMulti.js"></script>
-    <script type="module" src="./js/wires/multiToModulator.js"></script>
-    <script type="module" src="./js/wires/dcLimiterToParameterExtraction.js"></script>
-    <script type="module" src="./js/wires/differentiatorToEnveDetector.js"></script>
-    <script type="module" src="./js/wires/envelopeDetectorToDcLimiter.js"></script>
-    <script type="module" src="./js/wires/modulatorToDifferentiator.js"></script>
-
-
-    <!-- EVENTS MOUSE DOWN -->
-    <script type="module" src="./js/events/mousedown/modulatingSubmit.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/carrierSubmit.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/integrator.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/dcLimitedCircuit.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/differentiator.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/modulator.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/multiplier.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/parameterExtraction.mousedown.js"></script>
-    <script type="module" src="./js/events/mousedown/frequencySensistivitySubmit.mousedown.js"></script>
-
-    <!-- EVENTS MOUSE UP -->
-    <script type="module" src="./js/events/mouseup/modulatingSubmit.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/carrierSubmit.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/integrator.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/dcLimitedCircuit.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/differentiator.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/modulator.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/multiplier.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/parameterExtraction.mouseup.js"></script>
-    <script type="module" src="./js/events/mouseup/frequencySensistivitySubmit.mouseup.js"></script>
-    
-    <!-- SIGNAL QUERY -->
-    <script type="module" src="./js/signalsQuery/clearSignal.js"></script>
-    <script type="module" src="./js/signalsQuery/updateSignal.js"></script>
-    
-    <!-- BLOCK QUERY -->
-    <script type="module" src="./js/blocksQuery/filterBlocks.js"></script>
-    <script type="module" src="./js/blocksQuery/showBlocks.js"></script>
-
-    <!-- singleton -->
-    <script type="module" src="./js/singleton/singleton.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    </script>
-  </div>
 </body>
 
 </html>
