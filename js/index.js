@@ -20,25 +20,25 @@ import { parameterExtractionMouseUp } from "./events/mouseup/parameterExtraction
 import { multiplierMouseUp } from "./events/mouseup/multiplier.mouseup.js";
 
 // clear input dropdown when clear and outside click
-selectors.modSig_close.onclick = function () {
-	selectors.modulatingAmplitute.value = obj.modulating.amplitude;
-	selectors.modulatingFrequency.value = obj.modulating.frequency;
+selectors.modSig_close.onclick = function() {
+    selectors.modulatingAmplitute.value = obj.modulating.amplitude;
+    selectors.modulatingFrequency.value = obj.modulating.frequency;
 };
 
 const tutBtn = document.querySelector("#modulatingSubmit_tutorial");
 
 tutBtn.addEventListener("click", () => {
-	console.log("btn has triggered");
-	let value = $("input[name='options']:checked").val();
-	let tutorialDatas = tutorialData[value];
-	let randomNum = Math.floor(Math.random() * tutorialDatas.length);
-	let randomData = tutorialDatas[randomNum];
-	console.log(randomData);
-	obj["modulating"]["frequency"] = randomData["FM"];
-	obj["modulating"]["amplitude"] = randomData["AM"];
-	obj["carrier"]["frequency"] = randomData["FC"];
-	obj["carrier"]["amplitude"] = randomData["AC"];
-	obj["frequencySensistivity"] = randomData["KF"];
+    console.log("btn has triggered");
+    let value = $("input[name='options']:checked").val();
+    let tutorialDatas = tutorialData[value];
+    let randomNum = Math.floor(Math.random() * tutorialDatas.length);
+    let randomData = tutorialDatas[randomNum];
+    console.log(randomData);
+    obj["modulating"]["frequency"] = randomData["FM"];
+    obj["modulating"]["amplitude"] = randomData["AM"];
+    obj["carrier"]["frequency"] = randomData["FC"];
+    obj["carrier"]["amplitude"] = randomData["AC"];
+    obj["frequencySensistivity"] = randomData["KF"];
 });
 
 //clear signal
@@ -66,81 +66,81 @@ tutBtn.addEventListener("click", () => {
 // wire end
 
 selectors.modulatingSubmit.onmousedown = () => {
-	modulatingSubmitMouseDown();
+    modulatingSubmitMouseDown();
 };
 
 selectors.modulatingSubmit.onmouseup = () => {
-	modulatingSubmitMouseUp();
+    modulatingSubmitMouseUp();
 };
 
 selectors.carrierSubmit.onmousedown = () => {
-	carrierSubmitMouseDown();
+    carrierSubmitMouseDown();
 };
 
 selectors.carrierSubmit.onmouseup = () => {
-	carrierSubmitMouseUp();
+    carrierSubmitMouseUp();
 };
 
 selectors.frequencySensistivitySubmit.onmousedown = () => {
-	frequencySensistivitySubmitMouseDown();
+    frequencySensistivitySubmitMouseDown();
 };
 
 selectors.frequencySensistivitySubmit.onmouseup = () => {
-	frequencySensistivitySubmitMouseUp();
+    frequencySensistivitySubmitMouseUp();
 };
 
 // INTEGRATOR
 selectors.integrator.onmousedown = () => {
-	integratorMouseDown();
+    integratorMouseDown();
 };
 
 selectors.integrator.onmouseup = () => {
-	integratorMouseUp();
+    integratorMouseUp();
 };
 
 // MULTIPLIER
 selectors.multiplier.onmousedown = () => {
-	multiplierMouseDown();
+    multiplierMouseDown();
 };
 
 selectors.multiplier.onmouseup = () => {
-	multiplierMouseUp();
+    multiplierMouseUp();
 };
 
 // MODULATOR
 selectors.modulator.onmousedown = () => {
-	modulatorMouseDown();
+    modulatorMouseDown();
 };
 
 selectors.modulator.onmouseup = () => {
-	modulatorMouseUp();
+    modulatorMouseUp();
 };
 
 // DIFFERENTIATOR
 selectors.differentiator.onmousedown = () => {
-	differentiatorMouseDown();
+    differentiatorMouseDown();
 };
 
 selectors.differentiator.onmouseup = () => {
-	differentiatorMouseUp();
+    differentiatorMouseUp();
 };
 
 // DCLIMITEDCIRCUIT
 selectors.dcLimitedCircuit.onmousedown = () => {
-	dcLimitedCircuitMouseDown();
+    dcLimitedCircuitMouseDown();
 };
 
 selectors.dcLimitedCircuit.onmouseup = () => {
-	dcLimitedCircuitMouseUp();
+    dcLimitedCircuitMouseUp();
 };
 
 // PARAMETEREXTRACTION
 selectors.parameterExtraction.onmousedown = () => {
-	parameterExtractionMouseDown();
+    parameterExtractionMouseDown();
 };
 
 selectors.parameterExtraction.onmouseup = () => {
-	parameterExtractionMouseUp();
+    parameterExtractionMouseUp();
 };
 
 // console.log(
