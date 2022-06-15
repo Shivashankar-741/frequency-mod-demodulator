@@ -307,7 +307,7 @@
                             <div class="paramExtractResult"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" id='paraExtClostBtn' class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
@@ -344,69 +344,230 @@
                     </div>
                 </div>
             </div>
-            <canvas id="demo"></canvas>
+
+
+            <!-- formative assessment  -->
+            <div class="modal fade" id="formativeAssessment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel">Formative assessment</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form id="quiz">
+                                <ol>
+                                    <li>
+                                        <h3>1. Which type of FM is termed as AM?</h3>
+                                        <div>
+                                            <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
+                                            <label for="question-1-answers-A">A) WBFM </label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-1-answers" id="question-1-answers-B" value="B" />
+                                            <label for="question-1-answers-B">B) Direct FM</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-1-answers" id="question-1-answers-C" value="C" />
+                                            <label for="question-1-answers-C">C) NBFM</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-1-answers" id="question-1-answers-D" value="D" />
+                                            <label for="question-1-answers-D">D) Indirect FM</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>2. Calculate the bandwidth of WBFM for the modulation index value of 2 and the modulating signal frequency of 100Hz</h3>
+                                        <div>
+                                            <input type="radio" name="question-2-answers" id="question-2-answers-A" value="A" />
+                                            <label for="question-2-answers-A">A) 600 Hz</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-2-answers" id="question-2-answers-B" value="B" />
+                                            <label for="question-2-answers-B">B) 1200Hz</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-2-answers" id="question-2-answers-C" value="C" />
+                                            <label for="question-2-answers-C">C) 300 Hz</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-2-answers" id="question-2-answers-D" value="D" />
+                                            <label for="question-2-answers-D">D) 150 Hz</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>3. Find the frequency of FM signal when the modulating signal has zero amplitude.</h3>
+                                        <div>
+                                            <input type="radio" name="question-3-answers" id="question-3-answers-A" value="A" />
+                                            <label for="question-3-answers-A">A) Modulating frequency</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-3-answers" id="question-3-answers-B" value="B" />
+                                            <label for="question-3-answers-B">B) Infinite</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-3-answers" id="question-3-answers-C" value="C" />
+                                            <label for="question-3-answers-C">C) Zero</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-3-answers" id="question-3-answers-D" value="D" />
+                                            <label for="question-3-answers-D">D) Carrier frequency</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>4. Define FM.</h3>
+                                        <div>
+                                            <input type="radio" name="question-4-answers" id="question-4-answers-A" value="A" />
+                                            <label for="question-4-answers-A">A) Amplitude of the carrier signal is varied with respect to modulating signal.</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-4-answers" id="question-4-answers-B" value="B" />
+                                            <label for="question-4-answers-B">B) Frequency of the carrier signal is varied with respect to modulating signal.</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-4-answers" id="question-4-answers-C" value="C" />
+                                            <label for="question-4-answers-C">C) Phase of the carrier signal is varied with respect to modulating signal.</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-4-answers" id="question-4-answers-D" value="D" />
+                                            <label for="question-4-answers-D">D) Amplitude and phase of the carrier is varied with respect to modulating signal.</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>5. Arrange the blocks used at the demodulator to reconstruct the modulating signal from FM wave.</h3>
+                                        <div>
+                                            <input type="radio" name="question-5-answers" id="question-5-answers-A" value="A" />
+                                            <label for="question-5-answers-A">A) Differentiator &amp; Envelope detector</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-5-answers" id="question-5-answers-B" value="B" />
+                                            <label for="question-5-answers-B">B) Differentiator &amp;Integrator</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-5-answers" id="question-5-answers-C" value="C" />
+                                            <label for="question-5-answers-C">C) Integrator &amp; Envelope detector</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-5-answers" id="question-5-answers-D" value="D" />
+                                            <label for="question-5-answers-D">D) Integrator &amp; Differentiator</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <h3>6. How do you choose the amplitude and frequency of the carrier signal with respect to modulating signal?</h3>
+                                        <div>
+                                            <input type="radio" name="question-6-answers" id="question-6-answers-A" value="A" />
+                                            <label for="question-6-answers-A">A)Less than the modulating signal</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-6-answers" id="question-6-answers-B" value="B" />
+                                            <label for="question-6-answers-B">B) Half of modulating signal</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-6-answers" id="question-6-answers-C" value="C" />
+                                            <label for="question-6-answers-C">C) Equal to the modulating signal</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="question-6-answers" id="question-6-answers-D" value="D" />
+                                            <label for="question-6-answers-D">D) Greater than modulating signal</label>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </form>
+                            <!-- <input type="submit" value="Submit Quiz" /> </form> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class=" btn btn-secondary " id='assesmentSubmitBtn' data-bs-dismiss="modal "> submit </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+    </div>
 
-        <footer class="footer">
-            <h2 class="footer_fs">We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</h2>
-        </footer>
+    <!-- formative assessment result modal -->
+    <div class="modal fade" id="formativeAssessmentResult" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Formative assessment result</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="formAssessResult"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id='paraExtClostBtn' class="btn btn-secondary" data-bs-dismiss="modal" onclick="window.location.reload()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="demo"></canvas>
+    </div>
+
+    <footer class="footer">
+        <h2 class="footer_fs">We Acknowledge NITK and PALS for extending their support towards successful completion of this experiment</h2>
+    </footer>
 
 
-        <!-- PRIMARY FILES -->
-        <script type="module" src="./js/index.js"></script>
-        <script type="module" src="./js/graphs/downloadGraph.js"></script>
-        <script type="module" src="./js/graphs/removeGraph.js"></script>
-        <!-- <script type="module" src="./js/blocks/filterBlocks.js"></script> -->
+    <!-- PRIMARY FILES -->
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/graphs/downloadGraph.js"></script>
+    <script type="module" src="./js/graphs/removeGraph.js"></script>
+    <!-- <script type="module" src="./js/blocks/filterBlocks.js"></script> -->
 
-        <!-- Wires -->
-        <script type="module" src="./js/wires/modSigToIntegrator.js"></script>
-        <script type="module" src="./js/wires/freqSenToMulti.js"></script>
-        <script type="module" src="./js/wires/carrierToMod.js"></script>
-        <script type="module" src="./js/wires/integratorToMulti.js"></script>
-        <script type="module" src="./js/wires/multiToModulator.js"></script>
-        <script type="module" src="./js/wires/dcLimiterToParameterExtraction.js"></script>
-        <script type="module" src="./js/wires/differentiatorToEnveDetector.js"></script>
-        <script type="module" src="./js/wires/envelopeDetectorToDcLimiter.js"></script>
-        <script type="module" src="./js/wires/modulatorToDifferentiator.js"></script>
+    <!-- Wires -->
+    <script type="module" src="./js/wires/modSigToIntegrator.js"></script>
+    <script type="module" src="./js/wires/freqSenToMulti.js"></script>
+    <script type="module" src="./js/wires/carrierToMod.js"></script>
+    <script type="module" src="./js/wires/integratorToMulti.js"></script>
+    <script type="module" src="./js/wires/multiToModulator.js"></script>
+    <script type="module" src="./js/wires/dcLimiterToParameterExtraction.js"></script>
+    <script type="module" src="./js/wires/differentiatorToEnveDetector.js"></script>
+    <script type="module" src="./js/wires/envelopeDetectorToDcLimiter.js"></script>
+    <script type="module" src="./js/wires/modulatorToDifferentiator.js"></script>
 
 
-        <!-- EVENTS MOUSE DOWN -->
-        <script type="module" src="./js/events/mousedown/modulatingSubmit.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/carrierSubmit.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/integrator.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/dcLimitedCircuit.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/differentiator.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/modulator.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/multiplier.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/parameterExtraction.mousedown.js"></script>
-        <script type="module" src="./js/events/mousedown/frequencySensistivitySubmit.mousedown.js"></script>
+    <!-- EVENTS MOUSE DOWN -->
+    <script type="module" src="./js/events/mousedown/modulatingSubmit.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/carrierSubmit.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/integrator.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/dcLimitedCircuit.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/differentiator.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/modulator.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/multiplier.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/parameterExtraction.mousedown.js"></script>
+    <script type="module" src="./js/events/mousedown/frequencySensistivitySubmit.mousedown.js"></script>
 
-        <!-- EVENTS MOUSE UP -->
-        <script type="module" src="./js/events/mouseup/modulatingSubmit.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/carrierSubmit.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/integrator.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/dcLimitedCircuit.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/differentiator.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/modulator.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/multiplier.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/parameterExtraction.mouseup.js"></script>
-        <script type="module" src="./js/events/mouseup/frequencySensistivitySubmit.mouseup.js"></script>
+    <!-- EVENTS MOUSE UP -->
+    <script type="module" src="./js/events/mouseup/modulatingSubmit.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/carrierSubmit.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/integrator.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/dcLimitedCircuit.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/differentiator.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/modulator.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/multiplier.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/parameterExtraction.mouseup.js"></script>
+    <script type="module" src="./js/events/mouseup/frequencySensistivitySubmit.mouseup.js"></script>
 
-        <!-- SIGNAL QUERY -->
-        <script type="module" src="./js/signalsQuery/clearSignal.js"></script>
-        <script type="module" src="./js/signalsQuery/updateSignal.js"></script>
+    <!-- ASSESSMENT TEST -->
+    <script type="module" src="./js/assessment/assessment.js"></script>
 
-        <!-- BLOCK QUERY -->
-        <script type="module" src="./js/blocksQuery/filterBlocks.js"></script>
-        <script type="module" src="./js/blocksQuery/showBlocks.js"></script>
+    <!-- SIGNAL QUERY -->
+    <script type="module" src="./js/signalsQuery/clearSignal.js"></script>
+    <script type="module" src="./js/signalsQuery/updateSignal.js"></script>
 
-        <!-- singleton -->
-        <script type="module" src="./js/singleton/singleton.js"></script>
+    <!-- BLOCK QUERY -->
+    <script type="module" src="./js/blocksQuery/filterBlocks.js"></script>
+    <script type="module" src="./js/blocksQuery/showBlocks.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-        </script>
+    <!-- singleton -->
+    <script type="module" src="./js/singleton/singleton.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    </script>
     </div>
 </body>
 
