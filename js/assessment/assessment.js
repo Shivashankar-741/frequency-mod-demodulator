@@ -18,6 +18,10 @@ selectors.assesmentSubmitBtn.onclick = () => {
         //O(4n) => O(n)
     }
     console.log("userAnswers: ", userAnswers);
+	if(userAnswers.length!==5){
+		alert("Please answer all the questions");
+		window.location.reload();
+	}
     $("#formativeAssessmentResult").modal("show");
     document.querySelector(".formAssessResult").innerHTML = `
         <h1 class='qnAns'> ${
