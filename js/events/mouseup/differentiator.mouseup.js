@@ -65,7 +65,7 @@ export const differentiatorMouseUp = () => {
 				selectors.canvasWireBwDifferentiatorTodcLimiter.height
 			); //clear canvas
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (
 				singleton.modulator_isWireConnected &&
@@ -99,11 +99,11 @@ export const differentiatorMouseUp = () => {
         <h1 class='fontStyle'>Carrier Amplitute : ${obj.carrier.amplitude} V</h1>
         <h1 class='fontStyle'>Frequency Sensistivity: ${obj.frequencySensistivity} Hz/v</h1>
       `;
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else {
 				alert("please connect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.modulator_isDifferentiatorMoving = false;
 		singleton.differentiator_isDifferentiatorMoving = false;
@@ -185,7 +185,7 @@ selectors.envelopeDetector.onmouseup = () => {
 				selectors.canvasWireBwenvelopeDetToParamExtract.height
 			); //clear canvas
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (
 				singleton.differentiator_isWireConnected &&
@@ -213,7 +213,7 @@ selectors.envelopeDetector.onmouseup = () => {
 			} else {
 				alert("please connect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.differentiator_isenvelopeDetectorMoving = false;
 		singleton.envelope_isEnvelopeDetectorMoving = false;

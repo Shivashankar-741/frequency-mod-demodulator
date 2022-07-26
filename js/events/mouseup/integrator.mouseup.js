@@ -60,7 +60,7 @@ export const integratorMouseUp = () => {
 				selectors.canvasWireBwIntegratorToMultiplier.height
 			); //clear canvas
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (singleton.modSig_isWireConnected) {
 				// alert('output of integrator')
@@ -79,11 +79,11 @@ export const integratorMouseUp = () => {
         <h1 class='fontStyle'>Frequency : ${obj.modulating.amplitude} Hz</h1>
         <h1 class='fontStyle'>Amplitude : ${obj.modulating.amplitude / (2 * Math.PI * obj.modulating.frequency)} v</h1>
       `;
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else {
 				alert("Please connnect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.modSig_isIntegratorMoving = false;
 		singleton.integrator_isIntegratorMoving = false;

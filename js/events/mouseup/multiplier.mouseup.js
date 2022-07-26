@@ -75,7 +75,7 @@ export const multiplierMouseUp = () => {
 				selectors.canvasWireBwModulatorToDifferentiator.height
 			);
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (
 				singleton.freqSen_isWireConnected &&
@@ -100,11 +100,11 @@ export const multiplierMouseUp = () => {
 								obj.frequencySensistivity * (obj.modulating.amplitude / obj.modulating.frequency)
 							} V</h1>
       `;
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else {
 				alert("Please connect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.freqSen_isMultiplierMoving = false;
 		singleton.integrator_isMulitplierMoving = false;

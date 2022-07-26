@@ -47,13 +47,13 @@ export const carrierSubmitMouseUp = () => {
 					selectors.canvasWireBwCarsigToModulator.width,
 					selectors.canvasWireBwCarsigToModulator.height
 				); //clear canvas
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else if (selectors.model.value === "Edit") {
 				singleton.clearCarrierSignal = true;
 				singleton.editCarrierSignal = true;
 				singleton.updateCarrierSignal = true;
 				$("#carrierSignalModal").modal("show");
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else if (selectors.model.value === "output") {
 				document.querySelector(".outputTitle").innerText = `Output of carrier signal`;
 				if (document.getElementById("calculator").childNodes.length !== 0) {
@@ -64,7 +64,7 @@ export const carrierSubmitMouseUp = () => {
 				let s = "y(x) = " + `(${obj.carrier.amplitude} * \\cos( 2 * \\pi * ${obj.carrier.frequency} * x))`;
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 				document.querySelector(".result").innerHTML = `
             <h1 class='fontStyle'>Frequency : ${obj.carrier.frequency}Hz</h1>
             <h1 class='fontStyle'>Amplitute : ${obj.carrier.amplitude}V</h1>

@@ -50,13 +50,13 @@ export const modulatingSubmitMouseUp = () => {
 					selectors.canvasWireBwModsigToIntegrator.height
 				); //clear canvas
 				//
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else if (selectors.model.value === "Edit") {
 				singleton.clearModulatingSignal = true;
 				singleton.editModulatingSignal = true;
 				singleton.updatedModulatingSignal = true;
 				$("#modulatingSignalModal").modal("show");
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			} else if (selectors.model.value === "output") {
 				document.querySelector(".outputTitle").innerText = `Output of modulating signal`;
 				if (document.getElementById("calculator").childNodes.length !== 0) {
@@ -74,7 +74,7 @@ export const modulatingSubmitMouseUp = () => {
           <h1 class='fontStyle'>Frequency  : ${obj.modulating.frequency} Hz</h1>
           <h1 class='fontStyle'>Amplitute  : ${obj.modulating.amplitude} V</h1>
         `;
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 			}
 			singleton.modSig_isModulatingSignalMoving = false;
 			document.removeEventListener("mousemove", onMouseMove);

@@ -74,7 +74,7 @@ export const modulatorMouseUp = () => {
 				selectors.canvasWireBwModulatorToDifferentiator.height
 			); //clear canvas
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (
 				singleton.freqSen_isWireConnected &&
@@ -94,14 +94,14 @@ export const modulatorMouseUp = () => {
 				let s = "y(x) = " + `${eqn}`;
 				calculator.setExpression({ id: "graph1", latex: s });
 				$("#output").modal("show");
-				selectors.model.value = "mode";
+				// selectors.model.value = "mode";
 				document.querySelector(".result").innerHTML = `
         <h1 class='fontStyle'>Amplitute : ${obj.carrier.amplitude} V</h1>
       `;
 			} else {
 				alert("Please connect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.carrierSig_isModulatorMoving = false;
 		singleton.multiplier_isModulatorMoving = false;

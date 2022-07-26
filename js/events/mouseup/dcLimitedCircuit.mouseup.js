@@ -65,7 +65,7 @@ export const dcLimitedCircuitMouseUp = () => {
 				selectors.canvasWireBwdcLimiterToEnvelopeDetector.height
 			); //clear canvas
 			//
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		} else if (selectors.model.value === "output") {
 			if (
 				singleton.envelope_isWireConnected &&
@@ -98,7 +98,7 @@ export const dcLimitedCircuitMouseUp = () => {
 			} else {
 				alert("Please connect the wires");
 			}
-			selectors.model.value = "mode";
+			// selectors.model.value = "mode";
 		}
 		singleton.dcLimiter_isdcLimiterMoving = false;
 		singleton.envelope_isDcLimiterMoving = false;
