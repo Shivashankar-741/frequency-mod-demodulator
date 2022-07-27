@@ -53,10 +53,10 @@ export let connectionWireBwCarsigToModulator = document.querySelector(".connecti
 export let connectionWireBwIntegratorToMultiplier = document.querySelector(".connectionWireBwIntegratorToMultiplier");
 export let connectionWireBwMultiplierToModulator = document.querySelector(".connectionWireBwMultiplierToModulator");
 export let connectionWireBwModulatorToDifferentiator = document.querySelector(
-    ".connectionWireBwModulatorToDifferentiator"
+	".connectionWireBwModulatorToDifferentiator"
 );
 export let connectionWireBwDifferentiatorTodcLimiter = document.querySelector(
-    ".connectionWireBwDifferentiatorTodcLimiter"
+	".connectionWireBwDifferentiatorTodcLimiter"
 );
 export let check = document.querySelector(".check");
 export let check2 = document.querySelector(".check2");
@@ -75,3 +75,10 @@ export let canvasWireBwdcLimiterToEnvelopeDetector = document.getElementById("ca
 // Assessment submit btn
 export let assesmentSubmitBtn = document.querySelector("#assesmentSubmitBtn");
 export let paraExtClostBtn = document.querySelector("#paraExtClostBtn");
+
+export let assessmentNextBtn1 = document.getElementById("assessmentNextBtn1");
+export let assessmentNextBtn2 = document.getElementById("assessmentNextBtn2");
+export let assessmentNextBtn3 = document.getElementById("assessmentNextBtn3");
+export let assessmentNextBtn4 = document.getElementById("assessmentNextBtn4");
+export let assessmentNextBtn5 = document.getElementById("assessmentNextBtn5");
+export let assessmentNextBtn6 = document.getElementById("assessmentNextBtn6");
